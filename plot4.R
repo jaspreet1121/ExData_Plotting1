@@ -3,7 +3,7 @@ library(lubridate)
 
 a<-read.table("household_power_consumption.txt",sep = ";",header = TRUE)
 b<-filter(a,Date=="1/2/2007"|Date=="2/2/2007")
-x<-dmy_hms(paste(a$Date,a$Time))
+x<-dmy_hms(paste(b$Date,b$Time))
 png("plot4.png",width = 480,height = 480)
 par(mfcol=c(2,2))
 plot(x,as.numeric(paste(b$Global_active_power)),type = "l",ylab = "Global Active Power (kilowatts)",xlab = "")
