@@ -3,7 +3,7 @@ library(lubridate)
 
 a<-read.table("household_power_consumption.txt",sep = ";",header = TRUE)
 b<-filter(a,Date=="1/2/2007"|Date=="2/2/2007")
-x<-dmy_hms(paste(a$Date,a$Time))
+x<-dmy_hms(paste(b$Date,b$Time))
 png("plot3.png",height = 480.,width = 480)
 plot(x,as.numeric(paste(b$Sub_metering_1)),type = "l",xlab = "",ylab = "Energy sub metering")
 lines(x,as.numeric(paste(b$Sub_metering_2)),col = "red")
